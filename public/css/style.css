@@ -1,0 +1,56 @@
+#banner {
+    height: 90vh;
+    margin-top: 5vh;
+    /* margin-bottom: 5vh; */
+    background: url(https://www.foodiesfeed.com/wp-content/uploads/2019/02/messy-pizza-on-a-black-table.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#navMenu {
+    padding-left: 4vw;
+    padding-right: 4vw;
+}
+
+#logInForm {
+    width: 60vw;
+    height: 70vh;
+    margin: 0 auto;
+    padding-top: 15vh;
+}
+
+#loginTxt {
+    font-size: 2em;
+}
+
+#tile {
+    margin: 0 auto;
+    padding: 30px;
+}
+
+#tileContent {
+    width: 45vw;
+}
+
+#preferenceList {
+    max-height: 55vh;
+}
+
+#pantryList {
+    height: 80vh;
+}
+
+#card {
+    max-height: 70vh;
+}
+
+footer {
+    width: 100%;
+    margin: 0 auto;
+    color: black;
+    background-color: white;
+    position: fixed;
+    bottom: 0;
+    font-weight: bold;
+    text-align: center;
+}

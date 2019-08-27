@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="./css/reset.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+
+    <!-- JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    </a>
+
+    <div class="navbar-menu" id="navMenu">
+        <div class="navbar-start">
+            <a class="navbar-item">
+                Add Item
+            </a>
+            <a class="navbar-item">
+                Image
+            </a>
+            <a class="navbar-item">
+                Import from Loyalty
+            </a>
+        </div>
+
+        <div class="navbar-end">
+            <a class="navbar-item">
+                Search in Pantry
+            </a>
+        </div>
+    </div>
+    </div>
+
+    <section class="hero is-light is-large" id="banner" style="margin:0 auto;">
+        <div class="tile is-ancestor" id="tile">
+            <div class="tile is-parent">
+                <div class="tile is-child box" id="tileContent">
+                    <div class="card" id="card">
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-content">
+                                    <p class="title is-4">Virtual Pantry</p>
+                                </div>
+                            </div>
+
+                            <div class="content" id="mealContent">
+                                <p id="pantryList"></p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tile is-parent">
+                <div class="tile is-child box" id="tileContent">
+
+                    <nav class="panel" id="card">
+                        <p class="panel-heading">
+                            Preference
+                        </p>
+                        <div class="panel-block">
+                            <p class="control has-icons-left">
+                                <input class="input is-small" type="text" placeholder="search">
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-search" aria-hidden="true"></i>
+                                </span>
+                            </p>
+                        </div>
+                        <p class="panel-tabs">
+                            <a class="is-active" id="all">all</a>
+                            <a id="veg">Vegetarian</a>
+                            <a id="dairy">Dairy Free</a>
+                            <a id="mexican">Mexican</a>
+                            <a id="chinese">Chinese</a>
+                            <a id="american">American</a>
+                            <a id="italian">Italian</a>
+                        </p>
+                        <p id="preferenceList"></p>
+                        <!-- <a class="panel-block is-active">
+                            <span class="panel-icon">
+                                <i class="fas fa-book" aria-hidden="true"></i>
+                            </span>
+                            bulma
+                        </a>
+     
+                        <label class="panel-block">
+                            <input type="checkbox">
+                            remember me
+                        </label> -->
+                        <div class="panel-block">
+                            <button class="button is-link is-outlined is-fullwidth">
+                                Clear List
+                            </button>
+                        </div>
+                    </nav>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <footer id="sticky">
+        Copyright @ Orange-red-Project-2 2019
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
