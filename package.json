@@ -4,12 +4,17 @@
   "description": "* Stephen Allen (Mezran)\r * Michael McCarthy ()\r * Helen Kim ()\r * Aijah Chappell ()",
   "main": "server.js",
   "dependencies": {
-    "mysql2": "^1.6.5"
+    "express": "^4.17.1",
+    "mysql2": "^1.6.5",
+    "sequelize": "^5.16.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
