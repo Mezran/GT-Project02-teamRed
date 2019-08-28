@@ -1,5 +1,10 @@
 $(document).ready(function () {
 
+    $("#all").on("click", function (e) {
+        e.preventDefault();
+        $("#banner").css('background', 'url(https://source.unsplash.com/random/?food)')
+    });
+
     $("#veg").on("click", function (e) {
         e.preventDefault();
         $("#banner").css('background', 'url(https://source.unsplash.com/random/?vegetables)')
@@ -8,27 +13,31 @@ $(document).ready(function () {
 
     $("#dairy").on("click", function (e) {
         e.preventDefault();
-        $("#banner").css('background', 'url(https://source.unsplash.com/random/?)')
+        $("#banner").css('background', 'url(https://source.unsplash.com/random/?food)')
     });
 
     $("#mexican").on("click", function (e) {
         e.preventDefault();
-        $("#banner").css('background', 'url(https://source.unsplash.com/random/?)')
+        $("#banner").css('background', 'url(https://source.unsplash.com/collection/8518950)')
+        $("#banner").css('background-size', '100% 100%')
     });
 
     $("#chinese").on("click", function (e) {
         e.preventDefault();
-        $("#banner").css('background', 'url(https://source.unsplash.com/user/)')
+        $("#banner").css('background', 'url(https://source.unsplash.com/collection/8518687)')
+        $("#banner").css('background-size', '100% 100%')
     });
 
     $("#american").on("click", function (e) {
         e.preventDefault();
-        $("#banner").css('background', 'url(https://source.unsplash.com/random/?burger-and-hotdog)')
+        $("#banner").css('background', 'url(https://source.unsplash.com/collection/8518993)')
+        $("#banner").css('background-size', '100% 100%')
     });
 
     $("#italian").on("click", function (e) {
         e.preventDefault();
-        $("#banner").css('background', 'url(https://source.unsplash.com/random/?lasagne%2C-risotto%2C-bruschetta%2C-parmigiana%2C-truffles)')
+        $("#banner").css('background', 'url(https://source.unsplash.com/collection/8518975)')
+        $("#banner").css('background-size', '100% 100%')
     });
 
 });
