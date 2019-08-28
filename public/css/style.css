@@ -66,6 +66,12 @@
     
 }
 
+.modal-card {
+    position:fixed; 
+    top: 30vh;
+
+}
+
 footer {
     width: 100%;
     margin: 0 auto;

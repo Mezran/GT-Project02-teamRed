@@ -27,19 +27,19 @@
 
     <div class="navbar-menu" id="navMenu">
         <div class="navbar-start">
-            <a class="navbar-item">
+            <a id="addItem" class="navbar-item">
                 Add Item
             </a>
-            <a class="navbar-item">
+            <a id="addImg" class="navbar-item">
                 Image
             </a>
-            <a class="navbar-item">
+            <a id="importLoyalty" class="navbar-item">
                 Import from Loyalty
             </a>
         </div>
 
         <div class="navbar-end">
-            <a class="navbar-item">
+            <a id="searchPantry" class="navbar-item">
                 Search in Pantry
             </a>
         </div>
@@ -86,9 +86,32 @@
 
     </section>
 
+
+
+    <div class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+              <header class="modal-card-head">
+                <p class="modal-card-title">Modal title</p>
+                <button class="delete" aria-label="close"></button>
+              </header>
+              <section class="modal-card-body">
+                <!-- Content ... -->
+              </section>
+              <footer class="modal-card-foot">
+                <button class="button is-success">Add to Pantry</button>
+                <button class="button">Cancel</button>
+              </footer>
+            </div>
+          </div>
+
     <footer id="sticky">
         Copyright @ Orange-red-Project-2 2019
     </footer>
+
+
+
+    <script src="./js/navbar.js"></script>
 </body>
 
 </html>

@@ -27,19 +27,19 @@
 
     <div class="navbar-menu" id="navMenu">
         <div class="navbar-start">
-            <a class="navbar-item">
+            <a id="addItem" class="navbar-item">
                 Add Item
             </a>
-            <a class="navbar-item">
+            <a id="addImg" class="navbar-item">
                 Image
             </a>
-            <a class="navbar-item">
+            <a id="importLoyalty" class="navbar-item">
                 Import from Loyalty
             </a>
         </div>
 
         <div class="navbar-end">
-            <a class="navbar-item">
+            <a id="searchPantry" class="navbar-item">
                 Search in Pantry
             </a>
         </div>
@@ -73,8 +73,8 @@
                     <nav class="panel" id="card">
                         <div class="panel-block">
                             <p class="control has-icons-left">
-                                <input class="input is-small" type="text" placeholder="search">
-                                <span class="icon is-small is-left">
+                                <input class="input is-medium" type="text" placeholder="search">
+                                <span class="icon is-medium is-left">
                                     <i class="fas fa-search" aria-hidden="true"></i>
                                 </span>
                             </p>
@@ -91,7 +91,7 @@
                         <p id="preferenceList">
                             <div class="panel-block">
                                 <button class="button is-link is-outlined is-fullwidth">
-                                    Clear List
+                                    Submit
                                 </button>
                             </div>
                         </p>
@@ -115,10 +115,43 @@
 
     </section>
 
+
+
+
+    <div class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Virtual Pantry</p>
+                <button class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+                <div class="panel-block">
+                    <p class="control has-icons-left">
+                        <input id="pantryInput" class="input is-medium" type="text" placeholder="Add to Pantry">
+                        <span class="icon is-medium is-left">
+                            <i class="fas fa-search" aria-hidden="true"></i>
+                        </span>
+                    </p>
+                </div>
+                <!-- Content ... -->
+            </section>
+            <footer class="modal-card-foot">
+                <button id="addToPantry" class="button is-success">Add to Pantry</button>
+                <button id="cancel" class="button">Cancel</button>
+            </footer>
+        </div>
+    </div>
+
+
+
+
     <footer id="sticky">
         Copyright @ Orange-red-Project-2 2019
     </footer>
 
+
+    <script src="./js/navbar.js"></script>
     <script src="./js/backgroundImage.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
