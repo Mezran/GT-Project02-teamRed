@@ -29,7 +29,7 @@
                         <h1>Username</h1>
                         <div class="field">
                             <p class="control has-icons-left has-icons-right">
-                                <input class="input" type="username" placeholder="Enter your Username">
+                                <input id='username' class="input" type="username" placeholder="Enter your Username">
                                 <span class="icon is-small is-left">
                                     <i class="fas fa-user"></i>
                                 </span>
@@ -38,7 +38,7 @@
                         <h1>Password</h1>
                         <div class="field">
                             <p class="control has-icons-left">
-                                <input class="input" type="password" placeholder="Enter Your Password">
+                                <input id="password" class="input" type="password" placeholder="Enter Your Password">
                                 <span class="icon is-small is-left">
                                     <i class="fas fa-lock"></i>
                                 </span>
@@ -47,7 +47,7 @@
                         <h1>Verify Password</h1>
                         <div class="field">
                             <p class="control has-icons-left">
-                                <input class="input" type="password" placeholder="Enter Your Password">
+                                <input id="passwordCheck" class="input" type="password" placeholder="Enter Your Password">
                                 <span class="icon is-small is-left">
                                     <i class="fas fa-lock"></i>
                                 </span>
@@ -65,6 +65,39 @@
     <footer id="sticky">
         Copyright @ Orange-red-Project-2 2019
     </footer>
+
+    <script type="text/javascript">
+    $('#createAcctLoginBtn').on('click', function(event){
+      console.log("working");
+      event.preventDefault();
+
+      if($('#password').val() === $('#passwordCheck').val()){
+        //passwords match -- continue with post request
+        const newAccount = {
+          username: $('#username').val().trim(),
+          password: $('#password').val().trim()
+        }
+
+        $.post('/api/newAccounts', newAccount)
+        .then(function(data) {
+          alert('Your account has been created!')
+          // later auto login new user
+
+          window.location.href = '/';
+
+        })
+
+      } else{
+        alert('Your password did not match, please try again');
+      }
+
+
+
+
+    }); //end needAcctBtn on click
+    </script>
+
+
 </body>
 
 </html>

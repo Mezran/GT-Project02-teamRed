@@ -16,10 +16,10 @@ app.use(express.json());
 app.use(express.static('public'));
 
 // require api and html routing
-// require('./routes/api-routes.js')(app); // contains nothing atm
+require('./routes/api-routes.js')(app); // contains nothing atm
 require('./routes/html-routes.js')(app, path);
 
-// make server listen
+// make server listen   {force:true}
 db.sequelize.sync().then(function() {
   app.listen(PORT, function() {
     console.log(`server listening at ${PORT}`);
