@@ -27,19 +27,19 @@
 
     <div class="navbar-menu" id="navMenu">
         <div class="navbar-start">
-            <a class="navbar-item">
+            <a id="addItem" class="navbar-item">
                 Add Item
             </a>
-            <a class="navbar-item">
+            <a id="addImg" class="navbar-item">
                 Image
             </a>
-            <a class="navbar-item">
+            <a id="importLoyalty" class="navbar-item">
                 Import from Loyalty
             </a>
         </div>
 
         <div class="navbar-end">
-            <a class="navbar-item">
+            <a id="searchPantry" class="navbar-item">
                 Search in Pantry
             </a>
         </div>
@@ -54,13 +54,11 @@
                         <div class="card-content">
                             <div class="media">
                                 <div class="media-content">
-                                    <p class="title is-4">Virtual Pantry</p>
+                                    <p class="title is-4" id="title">Virtual Pantry</p>
                                 </div>
                             </div>
-
                             <div class="content" id="mealContent">
                                 <p id="pantryList"></p>
-
                             </div>
                         </div>
                     </div>
@@ -68,34 +66,52 @@
             </div>
             <div class="tile is-parent">
                 <div class="tile is-child box" id="tileContent">
-
                     <div class="card" id="card">
-
                         <img id="infoImg" src="https://via.placeholder.com/600x150" alt="Placeholder image">
                         <div class="card-content">
                             <div class="media">
-                                <div class="media-content" id="mealPrep">
+                                <div class="media-content" id="title">
                                     <p class="title is-4">Meal Prep</p>
                                 </div>
                             </div>
                             <div class="content" id="mealPrep">
                                 <p id="mealList"></p>
-
                             </div>
                         </div>
                     </div>
-
                 </div>
-
             </div>
         </div>
         </div>
 
     </section>
 
+
+
+    <div class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+              <header class="modal-card-head">
+                <p class="modal-card-title">Modal title</p>
+                <button class="delete" aria-label="close"></button>
+              </header>
+              <section class="modal-card-body">
+                <!-- Content ... -->
+              </section>
+              <footer class="modal-card-foot">
+                <button class="button is-success">Add to Pantry</button>
+                <button class="button">Cancel</button>
+              </footer>
+            </div>
+          </div>
+
     <footer id="sticky">
         Copyright @ Orange-red-Project-2 2019
     </footer>
+
+
+
+    <script src="./js/navbar.js"></script>
 </body>
 
 </html>
