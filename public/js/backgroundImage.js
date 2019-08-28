@@ -3,17 +3,20 @@ $(document).ready(function () {
     $("#all").on("click", function (e) {
         e.preventDefault();
         $("#banner").css('background', 'url(https://source.unsplash.com/random/?food)')
+        $("#banner").css('background-size', '100% 100%')
     });
 
     $("#veg").on("click", function (e) {
         e.preventDefault();
         $("#banner").css('background', 'url(https://source.unsplash.com/random/?vegetables)')
+        $("#banner").css('background-size', '100% 100%')
     });
 
 
     $("#dairy").on("click", function (e) {
         e.preventDefault();
         $("#banner").css('background', 'url(https://source.unsplash.com/random/?food)')
+        $("#banner").css('background-size', '100% 100%')
     });
 
     $("#mexican").on("click", function (e) {
