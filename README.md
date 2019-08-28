@@ -2,9 +2,9 @@
 
 ### Team members name/github:
 * Stephen Allen (Mezran)
-* Michael McCarthy ()
-* Helen Kim ()
-* Aijah Chappell ()
+* Michael McCarthy (michaelmccarthy)
+* Helen Kim (HK490)
+* Aijah Chappell (AijahChappell)
 
 ### Due date
 Sept 5, 2019
