@@ -96,6 +96,14 @@
     <footer id="sticky">
         Copyright @ Orange-red-Project-2 2019
     </footer>
+
+    <script>
+      $.get('/auth/isauth')
+        .then(data => {
+          console.log(data);
+        })
+
+    </script>
 </body>
 
 </html>
