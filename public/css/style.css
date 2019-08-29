@@ -48,11 +48,13 @@
 #preferenceList {
     height: 41vh;
     background: rgba(255, 255, 255, 0.9);
-}
+}*/
+
 #pantryList {
-    height: 42vh;
+    max-height: 59vh;
     background: rgba(255, 255, 255, 0.1);
-} */
+    overflow: hidden;
+} 
 
 #title {
     background: rgba(255, 255, 255, 0.3);
