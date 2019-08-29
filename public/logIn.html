@@ -2,27 +2,28 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome</title>
 
-    <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="./css/reset.css">
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="./css/reset.css">
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
 
-    <!-- JS -->
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <!-- JS -->
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 </head>
 
 <body>
+
     <section class="hero is-light is-large" id="banner">
         <div class="hero-body" id="logInForm">
             <div class="box">
                 <article class="media">
-                    <div class="media-content">
+                    <div class="media-content" id="loginContent">
                         <div class="container has-text-centered">
                             <strong id="loginTxt">Login</strong>
                         </div>
@@ -58,13 +59,95 @@
                         </nav>
                     </div>
                 </article>
+
             </div>
-        </div>
-    </section>
+
+
+
+
+            <!-- login form -->
+            <!-- <form action="/login" method="post"> -->
+              <h1>Username</h1>
+              <div class="field">
+                <p class="control has-icons-left has-icons-right">
+                  <input id="username" class="input" type="username" placeholder="Enter your Username">
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-user"></i>
+                  </span>
+                </p>
+              </div>
+              <h1>Password</h1>
+              <div class="field">
+                <p class="control has-icons-left">
+                  <input id="password" class="input" type="password" placeholder="Enter Your Password">
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-lock"></i>
+                  </span>
+                </p>
+              </div>
+              <a id="loginBtn" class="button">Login</a><a class="button is-white"><i id="fbBtn" class="fab fa-facebook-square"></i></a><a class="button is-white"><i id="googleBtn" class="fab fa-google"></i></a>
+            <!-- </form> -->
+
+            <br><br>
+            <nav class="level is-mobile">
+              <div class="level-left">
+                <a class="level-item" aria-label="reply">
+                  <a href='/createAcct'>
+                    <p id="needAcctBtn">Need an Account?</p>
+                  </a>
+                  </span>
+                </a>
+              </div>
+            </nav>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer id="sticky">
+    Copyright @ Orange-red-Project-2 2019
+  </footer>
+
+
+  <script type="text/javascript">
+    $('#loginBtn').on('click', function(event) {
+      const credentials = {
+        username: $('#username').val().trim(),
+        password: $('#password').val().trim()
+      }
+
+      console.log(credentials);
+
+      $.post('/login', credentials)
+        .then(function(data) {
+          // console.log(data.message);
+          // if(data.message == 1){
+          //
+          //   // $.get('/api/getfridge',$('#username').val().trim() )
+          // } else {
+          //   alert("bad login");
+          // }
+          // console.log(data);
+          // login user
+          // localStorage.setItem('username', data.username);
+          // localStorage.setItem('logged_in', true);
+          window.location = '/info';
+        }).catch(err => {
+          window.location = '/';
+        });
+
+
+    });
+  </script>
 
     <footer id="sticky">
         Copyright @ Orange-red-Project-2 2019
     </footer>
+
+    <script src="./js/backgroundImage.js"></script>
+
 </body>
+
 
 </html>

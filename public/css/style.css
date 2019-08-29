@@ -1,10 +1,10 @@
 #banner {
     height: 90vh;
     margin-top: 5vh;
-    /* margin-bottom: 5vh; */
-    background: url(https://www.foodiesfeed.com/wp-content/uploads/2019/02/messy-pizza-on-a-black-table.jpg);
+    background: url(https://source.unsplash.com/random/?food);
+    /* background: url(https://www.foodiesfeed.com/wp-content/uploads/2019/02/messy-pizza-on-a-black-table.jpg); */
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 100%;
 }
 
 #navMenu {
@@ -19,6 +19,10 @@
     padding-top: 15vh;
 }
 
+#loginContent {
+    background: rgba(255, 255, 255, 0.9);
+}
+
 #loginTxt {
     font-size: 2em;
 }
@@ -30,18 +34,44 @@
 
 #tileContent {
     width: 45vw;
+    background: rgba(255, 255, 255, 0.1);
+}
+/* 
+#mealContent {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+#pantryContent {
+    background: rgba(255, 255, 255, 0.9);
 }
 
 #preferenceList {
-    max-height: 55vh;
-}
+    height: 41vh;
+    background: rgba(255, 255, 255, 0.9);
+}*/
 
 #pantryList {
-    height: 80vh;
+    max-height: 59vh;
+    background: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+} 
+
+#title {
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow:  7px 7px 10px 10px white;
+    text-shadow: 4px 4px 6px gray;
 }
 
 #card {
-    max-height: 70vh;
+    height: 75vh;
+    background: rgba(255, 255, 255, 0.9);
+    
+}
+
+.modal-card {
+    position:fixed; 
+    top: 30vh;
+
 }
 
 footer {
