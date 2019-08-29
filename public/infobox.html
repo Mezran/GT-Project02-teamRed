@@ -110,8 +110,18 @@
     </footer>
 
 
+    <script>
+      $.get('/auth/isauth')
+        .then(data => {
+          console.log(data);
+        })
+
+    </script>
+
+
 
     <script src="./js/navbar.js"></script>
+
 </body>
 
 </html>
