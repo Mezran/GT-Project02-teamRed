@@ -40,7 +40,7 @@ module.exports = function(app) {
 );
 
 app.get('/login', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public/login.html'))
+  res.sendFile(path.join(__dirname, '/public/logIn.html'))
   // if (req.user) {
   //   res.send(`Welcome ${req.user.displayName}!`);
   // } else res.redirect('/login');
