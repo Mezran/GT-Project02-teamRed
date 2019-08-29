@@ -4,5 +4,15 @@ module.exports = function(sequelize, DataTypes) {
     password: DataTypes.STRING
   });
 
+  // Account.associate = function(models) {
+  //   Account.hasOne(models.Fridge, {
+  //     onDelete:'cascade'
+  //   });
+  // };
+
+  Account.prototype.validatePassword = function(val) {
+    return this.password === val;
+  }
+
   return Account;
 };

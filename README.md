@@ -9,6 +9,11 @@
 ### Due date
 Sept 5, 2019
 
+### Instillation
+- run npm install
+- insure local database is created
+- change congif.json to reflect database name and password
+
 
 ### Requirements
 * Use a Node and express web server
