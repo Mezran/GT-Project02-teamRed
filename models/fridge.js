@@ -4,18 +4,20 @@ module.exports = function(sequelize, DataTypes) {
     item: DataTypes.INTEGER
   });
 
-  // Fridge.associate = function(models) {
-  //   Fridge.belongsTo(models.Account, {
-  //     foreignKey: {
-  //       allowNull: false
-  //     }
-  //   })
+  Fridge.associate = function(models) {
+    this.belongsTo(models.account);
+    this.belongsToMany(models.item, {
+      through: 'FridgeItem'
+      // foreignKey: {
+      //   allowNull: false
+      // }
+    })
 
     // Fridge.hasMany(models.JoinTable, {
     //   onDelete: "cascade"
     // });
 
-  // };
+  };
 
 
 
