@@ -4,7 +4,7 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   // Item.associate = function(models) {
-  //   Item.hasOne(models.JoinTable, {
+  //   Item.hasMany(models.JoinTable, {
   //     onDelete: "cascade"
   //   });
   // }

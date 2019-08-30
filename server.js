@@ -33,7 +33,7 @@ app.use(passport.session());
 
 
 // require api and html routing
-require('./routes/api-routes.js')(app); // contains nothing atm
+require('./routes/api-routes.js')(app);
 require('./routes/html-routes.js')(app, path);
 
 

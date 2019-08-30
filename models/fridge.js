@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
-  var Fridge = sequelize.define("fridge", {
-    ownerID: DataTypes.INTEGER,
+  const Fridge = sequelize.define("fridge", {
+    accountId: DataTypes.INTEGER,
     item: DataTypes.INTEGER
   });
 
@@ -9,13 +9,14 @@ module.exports = function(sequelize, DataTypes) {
   //     foreignKey: {
   //       allowNull: false
   //     }
-  //   });
-  //
-  //   Fridge.hasMany(models.JoinTable, {
-  //     onDelete: "cascade"
-  //   });
-  //
-  // }
+  //   })
+
+    // Fridge.hasMany(models.JoinTable, {
+    //   onDelete: "cascade"
+    // });
+
+  // };
+
 
 
   return Fridge;

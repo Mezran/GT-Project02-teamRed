@@ -34,4 +34,11 @@ Object.keys(db).forEach(modelName => {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
+
+db.account.hasOne(db.fridge);
+db.fridge.belongsTo(db.account);
+db.fridge.hasMany(db.item);
+db.item.belongsTo(db.fridge);
+
+
 module.exports = db;

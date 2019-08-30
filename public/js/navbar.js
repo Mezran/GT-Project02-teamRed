@@ -12,10 +12,20 @@ $(document).ready(function () {
     });
 
     $("#addToPantry").on("click", function () {
+
+      const dataToSend = {
+        name:$('#pantryInput').val()
+      }
+
+      // console.log(dataToSend);
+
+      $.post('/api/addItem', dataToSend)
+      .then(function(data){
         $("#pantryList").append($("#pantryInput").val() + "<br>")
         console.log($("#pantryInput").val())
         $(".modal").hide();
         $("#pantryInput").val("")
+      })
     });
 
     $("#cancel").on("click", function () {
