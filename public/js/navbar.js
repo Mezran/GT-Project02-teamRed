@@ -9,7 +9,7 @@ $(document).ready(function () {
 
     $(".delete").on("click", function () {
         $("#addItemModal").hide();
-        $("#pantryInput").val("")
+        $(".input").val("")
     });
 
     $("#addToPantry").on("click", function () {
@@ -26,14 +26,14 @@ $(document).ready(function () {
             <td>${tbd}</td>
             </tr>
         `)
-
+    
         $("#addItemModal").hide();
-        $("#pantryInput").val("")
+        $(".input").val("");
     });
 
     $("#cancel").on("click", function () {
         $("#addItemModal").hide();
-        $("#pantryInput").val("")
+        $(".input").val("")
     });
 
 
@@ -54,7 +54,7 @@ $(document).ready(function () {
 
     // Delete On Clicked Row
 
-    let rowAnswer = $("#tableBody").text();
+    // let rowAnswer = $("#tableBody").text();
 
     $("#tableBody").on("click", function(){
         $("#tableBody").empty()
