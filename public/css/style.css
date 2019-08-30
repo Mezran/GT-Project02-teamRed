@@ -57,7 +57,10 @@
     overflow: hidden;
 } 
 
-#pantryInput {
+#nameSearch,
+#quantitySearch,
+#expDateSearch,
+#tbd{
     width: 15.5vw;
     
 }
@@ -76,7 +79,7 @@
 
 .modal-card {
     position:fixed; 
-    top: 30vh;
+    top: 15vh;
     width: 70vw !important;
 
 }

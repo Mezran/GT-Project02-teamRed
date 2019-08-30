@@ -52,6 +52,14 @@ $(document).ready(function () {
 
     });
 
+    // Delete On Clicked Row
+
+    let rowAnswer = $("#tableBody").text();
+
+    $("#tableBody").on("click", function(){
+        $("#tableBody").empty()
+    })
+
 
 
 
