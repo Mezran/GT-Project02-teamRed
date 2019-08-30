@@ -49,11 +49,18 @@
     background: rgba(255, 255, 255, 0.9);
 }*/
 
-#pantryList {
+#pantryList,
+#tableBody,
+.table-container {
     max-height: 59vh;
     background: rgba(255, 255, 255, 0.1);
     overflow: hidden;
 } 
+
+#pantryInput {
+    width: 15.5vw;
+    
+}
 
 #title {
     background: rgba(255, 255, 255, 0.3);
@@ -70,8 +77,11 @@
 .modal-card {
     position:fixed; 
     top: 30vh;
+    width: 70vw !important;
 
 }
+
+
 
 footer {
     width: 100%;

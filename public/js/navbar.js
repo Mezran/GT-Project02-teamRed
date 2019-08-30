@@ -1,6 +1,8 @@
 $(document).ready(function () {
 
 
+
+    // Add Item Button For Modal Popup
     $("#addItem").on("click", function () {
         $("#addItemModal").show();
     });
@@ -11,7 +13,20 @@ $(document).ready(function () {
     });
 
     $("#addToPantry").on("click", function () {
-        $("#pantryList").append($("#pantryInput").val() + "<br>")
+        let nameValue = $("#nameSearch").val();
+        let quantitySearch = $("#quantitySearch").val();
+        let expDateSearch = $("#expDateSearch").val();
+        let tbd = $("#tbd").val();
+
+        $("#tableBody").append(`
+            <tr>
+            <td>${nameValue}</td>
+            <td>${quantitySearch}</td>
+            <td>${expDateSearch}</td>
+            <td>${tbd}</td>
+            </tr>
+        `)
+
         $("#addItemModal").hide();
         $("#pantryInput").val("")
     });
@@ -24,16 +39,14 @@ $(document).ready(function () {
 
 
 
-
-
-
+    // Add Image Button 
     $("#addImg").on("click", function () {
 
 
     });
 
 
-
+    // Import From Loyalty Button
     $("#importLoyalty").on("click", function () {
 
 

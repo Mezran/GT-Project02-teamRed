@@ -53,7 +53,27 @@
                             </div>
 
                             <div class="content" id="mealContent">
-                                <p id="pantryList"></p>
+                                <p id="pantryList">
+                                    <div class="table-container">
+                                        <table class="table is-hoverable is-fullwidth is-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th>Quantity</th>
+                                                    <th>Expiration Date</th>
+                                                    <th>Blank</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody id="tableBody">
+                                                <tr id="row">
+
+                                                </tr>
+                                            </tbody>
+
+                                        </table>
+                                    </div>
+                                </p>
                             </div>
 
 
@@ -122,10 +142,21 @@
             <section class="modal-card-body">
                 <div class="panel-block">
                     <p class="control has-icons-left">
-                        <input id="pantryInput" class="input is-medium" type="text" placeholder="Add to Pantry">
-                        <span class="icon is-medium is-left">
+                        <tr>
+                            <td><input id="nameSearch" class="input is-medium" type="text" placeholder="Name">
+                            </td>
+                            <td><input id="quantitySearch" class="input is-medium" type="text" placeholder="Quantity">
+                            </td>
+                            <td><input id="expDateSearch" class="input is-medium" type="text" placeholder="Exp. Date">
+                            </td>
+                            <td><input id="tbd" class="input is-medium" type="text" placeholder="Blank">
+                            </td>
+                        </tr>
+
+
+                        <!-- <span class="icon is-medium is-left">
                             <i class="fas fa-search" aria-hidden="true"></i>
-                        </span>
+                        </span> -->
                     </p>
                 </div>
                 <!-- Content ... -->
