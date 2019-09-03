@@ -13,6 +13,20 @@ $(document).ready(function () {
     });
 
     $("#addToPantry").on("click", function () {
+
+      const dataToSend = {
+        name:$('#nameSearch').val()
+      }
+
+      console.log(dataToSend);
+
+      $.post('/api/addItem', dataToSend)
+      .then(function(data){
+        $("#pantryList").append($("#pantryInput").val() + "<br>")
+        // console.log($("#pantryInput").val())
+        $(".modal").hide();
+        $("#pantryInput").val("")
+      })
         let nameValue = $("#nameSearch").val();
         let quantitySearch = $("#quantitySearch").val();
         let expDateSearch = $("#expDateSearch").val();
@@ -26,7 +40,7 @@ $(document).ready(function () {
             <td>${tbd}</td>
             </tr>
         `)
-    
+
         $("#addItemModal").hide();
         $(".input").val("");
     });
@@ -39,7 +53,7 @@ $(document).ready(function () {
 
 
 
-    // Add Image Button 
+    // Add Image Button
     $("#addImg").on("click", function () {
 
 
@@ -78,12 +92,12 @@ $(document).ready(function () {
         // $(this).css('background-size', "100% 2.2em")
         // $(this).css('background-repeat', "no-repeat")
         // $(this).css('background-position-x', "20px")
-     
+
         // $(this).css('background-position', "center top")
     // })
- 
-    
-   
+
+
+
 
 
 

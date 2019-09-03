@@ -7,10 +7,9 @@ module.exports = {
 
       let accounts = [];
 
-      for (let i = 0; i < 49; i++){
+      for (let i = 0; i < 9; i++){
         let date = new Date();
         accounts.push({
-          id:i,
           username: faker.internet.userName(),
           password: faker.internet.password(),
           createdAt: date,

@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "helen490",
-    "database": "dbFridge",
+    "password": "TShirtTime3",
+    "database": "fridge",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false
