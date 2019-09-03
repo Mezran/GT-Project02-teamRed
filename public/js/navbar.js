@@ -37,7 +37,7 @@ $(document).ready(function () {
             <td>${nameValue}</td>
             <td>${quantitySearch}</td>
             <td>${expDateSearch}</td>
-            <td>${tbd}</td>
+            
             </tr>
         `)
 

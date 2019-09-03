@@ -61,7 +61,7 @@
 #quantitySearch,
 #expDateSearch,
 #tbd{
-    width: 15.5vw;
+    width: 21vw;
     
 }
 
@@ -99,9 +99,8 @@ footer {
 
 #tableBody > tr:hover {
     color: white;
-    background: url(https://icon-library.net/images/small-trash-can-icon/small-trash-can-icon-19.jpg) center top;
-    /* background-size: 40% 2.2em; */
+    background: url(https://mealplanninja.com/wp-content/uploads/2017/12/trash-can-icon.png) center;
+    background-size: 30% 3.5em;
     background-repeat: no-repeat;
-    background-position: center;
  
 }
