@@ -62,7 +62,7 @@ app.get('/login', (req, res) => {
     });
   });
 
-  // delete?
+
   app.get('/auth/isauth', function(req, res) {
     console.log(req.user);
     if ( req.user ) return res.send({success: 1})
@@ -194,7 +194,20 @@ app.get('/login', (req, res) => {
     // .then(function(dbPost) {
     //   res.json(dbPost);
     // });
-  });
+  }); // end app.post api/addItem
+
+
+  app.get("/api/loadSavedItems", function(req, res){
+    console.log(req.user.id);
+    db.fridge.findAll({
+      include:[db.item],
+      where:{
+        accountId: req.user.id
+      }
+    }).then(function(results){
+      res.json(results);
+    })
+  })
 
 
 
