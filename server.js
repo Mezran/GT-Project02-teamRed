@@ -36,11 +36,7 @@ app.use(passport.session());
 
 
 // require api and html routing
-<<<<<<< HEAD
-require('./routes/api-routes.js')(app);
-=======
 require('./routes/api-routes.js')(app, passport);
->>>>>>> b5e86bba890ddce5ff94a75d4ffc9f554e7bbe7b
 require('./routes/html-routes.js')(app, path);
 
 
