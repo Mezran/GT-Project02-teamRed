@@ -83,6 +83,7 @@
 
       $.post('/login', credentials)
         .then(function(data) {
+          localStorage.setItem("username", data.username);
           // console.log(data.message);
           // if(data.message == 1){
           //
