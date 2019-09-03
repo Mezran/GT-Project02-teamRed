@@ -3,11 +3,13 @@ module.exports = function(sequelize, DataTypes) {
     itemName: DataTypes.STRING
   });
 
-  // Item.associate = function(models) {
-  //   Item.hasOne(models.JoinTable, {
-  //     onDelete: "cascade"
-  //   });
-  // }
+
+  Item.associate = function(models) {
+    this.belongsToMany(models.fridge, {
+      through: 'FridgeItem',
+      // onDelete: "cascade"
+    });
+  }
 
 
   return Item;

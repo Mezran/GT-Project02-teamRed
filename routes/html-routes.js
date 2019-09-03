@@ -6,17 +6,15 @@ module.exports = function(app, path) {
   // should result in taking the user to the index.html page
 
   app.get('/info', function(req, res) {
-    res.sendFile(path.join(__dirname, '../public/infobox.html'))
+    res.sendFile(path.join(__dirname, '../public/checkbox.html'))
   })
 
   app.get('/createAcct', function(req, res) {
     res.sendFile(path.join(__dirname, '../public/createAcct.html'))
   })
+
   app.get('*', function(req, res) {
     res.sendFile(path.join(__dirname, '../public/logIn.html'));
   })
 
-
-
-
-}
+} // end module.exports

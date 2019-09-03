@@ -108,7 +108,12 @@
       $.get('/auth/isauth')
         .then(data => {
           console.log(data);
-        })
+        });
+      $.get('/users')
+        .then(data => {
+          console.log(data);
+        });
+
 
     </script>
 
