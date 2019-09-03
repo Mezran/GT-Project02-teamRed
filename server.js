@@ -120,7 +120,7 @@ passport.deserializeUser(function (user, done) {
 
 
 // make server listen   {force:true}
-db.sequelize.sync().then(function() {
+db.sequelize.sync({force:false}).then(function() {
   app.listen(PORT, function() {
     console.log(`server listening at ${PORT}`);
   });
