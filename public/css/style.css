@@ -96,3 +96,12 @@ footer {
     font-weight: bold;
     text-align: center;
 }
+
+#tableBody > tr:hover {
+    color: white;
+    background: url(https://icon-library.net/images/small-trash-can-icon/small-trash-can-icon-19.jpg) center top;
+    /* background-size: 40% 2.2em; */
+    background-repeat: no-repeat;
+    background-position: center;
+ 
+}

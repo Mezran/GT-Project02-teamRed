@@ -56,9 +56,34 @@ $(document).ready(function () {
 
     // let rowAnswer = $("#tableBody").text();
 
-    $("#tableBody").on("click", function(){
-        $("#tableBody").empty()
+    $("#tableBody").on("click", 'tr', function(){
+        $(this).remove()
     })
+
+
+    // $("#tableBody").on("mouseleave","tr", function() {
+    //     $(this).css('background', 'white')
+    //     $(this).css('color', 'black')
+    // })
+
+    // $("#tableBody").on("mouseover", "tr", function() {
+    //     $(this).css({
+    //         'color': "white",
+    //         'background': 'url( https://icon-library.net/images/trash-can-vector-icon/trash-can-vector-icon-15.jpg)',
+    //         'background-size': "25% 2.2em",
+    //         'background-repeat': "no-repeat",
+    //         'background-position': "center"
+    //     })
+        // $(this).css('background', 'url( https://icon-library.net/images/trash-can-vector-icon/trash-can-vector-icon-15.jpg)')
+        // $(this).css('background-size', "100% 2.2em")
+        // $(this).css('background-repeat', "no-repeat")
+        // $(this).css('background-position-x', "20px")
+     
+        // $(this).css('background-position', "center top")
+    // })
+ 
+    
+   
 
 
 
