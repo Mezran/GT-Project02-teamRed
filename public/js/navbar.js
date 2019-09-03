@@ -13,22 +13,20 @@ $(document).ready(function () {
     });
 
     $("#addToPantry").on("click", function () {
-// <<<<<<< HEAD
 
       const dataToSend = {
-        name:$('#pantryInput').val()
+        name:$('#nameSearch').val()
       }
 
-      // console.log(dataToSend);
+      console.log(dataToSend);
 
       $.post('/api/addItem', dataToSend)
       .then(function(data){
         $("#pantryList").append($("#pantryInput").val() + "<br>")
-        console.log($("#pantryInput").val())
+        // console.log($("#pantryInput").val())
         $(".modal").hide();
         $("#pantryInput").val("")
       })
-// =======
         let nameValue = $("#nameSearch").val();
         let quantitySearch = $("#quantitySearch").val();
         let expDateSearch = $("#expDateSearch").val();
@@ -45,7 +43,6 @@ $(document).ready(function () {
 
         $("#addItemModal").hide();
         $(".input").val("");
-// >>>>>>> d27f8db8e0ae74d85de40237e5fbe18f43f4186c
     });
 
     $("#cancel").on("click", function () {

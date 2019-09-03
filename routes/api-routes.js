@@ -142,8 +142,11 @@ app.get('/login', (req, res) => {
 
   //when user 'adds an item' to their fridge
   app.post('/api/addItem', function(req, res) {
+    console.log("add item fired");
+
     const data = req.body;
-    console.log(req.user);
+    // console.log(req.body.name);
+    // console.log(req.user);
     // console.log(data);
     // console.log(req.body);
     // console.log(req.body.name);
@@ -157,7 +160,7 @@ app.get('/login', (req, res) => {
         itemName:req.body.name
       }
     }).then(function(results){
-      console.log(results)
+      // console.log(results)
       // console.log(results.dataValues.id);
       // const newRow = {
       //   dbItemIDId: results.dataValues.id,
@@ -205,6 +208,8 @@ app.get('/login', (req, res) => {
         accountId: req.user.id
       }
     }).then(function(results){
+      console.log("returning data")
+      console.log(results);
       res.json(results);
     })
   })
