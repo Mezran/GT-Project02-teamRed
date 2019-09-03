@@ -32,7 +32,6 @@ module.exports = function (app, passport) {
 
 
   app.post('/login',
-
   passport.authenticate('local', {
     successRedirect: '/checkbox',
     failureRedirect: '/login',
@@ -200,8 +199,10 @@ module.exports = function (app, passport) {
           id: req.user.id
         }
       }).then(fridge => {
+        // console.log(results);
+        console.log(fridge);
         fridge.addItem(results.dataValues.id, results.dataValues.id)
-        res.json("done");
+        res.json(results);
       })
       // console.log(db.fridge);
 
@@ -235,6 +236,25 @@ module.exports = function (app, passport) {
       res.json(results);
     })
   })
+
+
+
+
+  app.delete("/api/deleteItem/:item", function(req, res){
+    db.fridge.findOne({
+      where:{
+        accountId:req.user.id
+      }
+    }).then(function(fridge){
+      fridge.removeItem(req.params.item);
+      res.json({message:"completed"})
+    })
+  })
+
+      // db.Todo.destroy({where:{id:req.params.id}})
+      // .then(function(results){
+      //   res.json({message:"Success"});
+      // })
 
 
 
