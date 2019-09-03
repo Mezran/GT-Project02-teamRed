@@ -2,7 +2,6 @@
     height: 90vh;
     margin-top: 5vh;
     background: url(https://source.unsplash.com/random/?food);
-    /* background: url(https://www.foodiesfeed.com/wp-content/uploads/2019/02/messy-pizza-on-a-black-table.jpg); */
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
@@ -50,11 +49,21 @@
     background: rgba(255, 255, 255, 0.9);
 }*/
 
-#pantryList {
+#pantryList,
+#tableBody,
+.table-container {
     max-height: 59vh;
     background: rgba(255, 255, 255, 0.1);
     overflow: hidden;
 } 
+
+#nameSearch,
+#quantitySearch,
+#expDateSearch,
+#tbd{
+    width: 15.5vw;
+    
+}
 
 #title {
     background: rgba(255, 255, 255, 0.3);
@@ -70,9 +79,12 @@
 
 .modal-card {
     position:fixed; 
-    top: 30vh;
+    top: 15vh;
+    width: 70vw !important;
 
 }
+
+
 
 footer {
     width: 100%;
@@ -83,4 +95,13 @@ footer {
     bottom: 0;
     font-weight: bold;
     text-align: center;
+}
+
+#tableBody > tr:hover {
+    color: white;
+    background: url(https://icon-library.net/images/small-trash-can-icon/small-trash-can-icon-19.jpg) center top;
+    /* background-size: 40% 2.2em; */
+    background-repeat: no-repeat;
+    background-position: center;
+ 
 }
