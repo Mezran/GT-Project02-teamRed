@@ -1,6 +1,5 @@
 const db = require('../models');
 const path = require("path");
-//const passport = require('passport');
 
 
 module.exports = function (app, passport) {
@@ -31,14 +30,9 @@ module.exports = function (app, passport) {
   // });// end app.post
 
 
-  app.post('/login',
-
-  passport.authenticate('local', {
-    successRedirect: '/checkbox',
-    failureRedirect: '/login',
-    failerFlash:true
-  })
-);
+  app.post('/login', passport.authenticate('local'), function (req, res) {
+    res.json({ username: req.user.username });
+  });
 
 
   app.get('/login', (req, res) => {
@@ -65,34 +59,34 @@ module.exports = function (app, passport) {
   app.get('/auth/google/callback',
     passport.authenticate('google', { failureRedirect: '/login' }),
     function (req, res) {
-      res.redirect('/');
+      res.redirect('/info');
     });
 
 
   app.post('/api/newAccounts', function (req, res) {
     const newAcctInfo = req.body;
     db.account.create(req.body)
-    .then(function(dbPost) {
-      console.log(dbPost.dataValues.id)
-      db.fridge.create(
-        {
-          accountId: dbPost.dataValues.id,
-          item: 1
-        }
-      ).then(function(){})
-      res.json(dbPost);
-    });
+      .then(function (dbPost) {
+        console.log(dbPost.dataValues.id)
+        db.fridge.create(
+          {
+            accountId: dbPost.dataValues.id,
+            item: 1
+          }
+        ).then(function () { })
+        res.json(dbPost);
+      });
   });
 
 
-  app.get('/auth/isauth', function(req, res) {
+  app.get('/auth/isauth', function (req, res) {
     console.log(req.user);
     if (req.user) return res.send({ success: 1 })
 
     res.status(401).send({ message: 'Not Authorized' });
   })
 
-
+  // APP WILL NOT RUN WITHOUT THIS
   // function getThing(userAccountName){
   //
   // }
@@ -116,54 +110,54 @@ module.exports = function (app, passport) {
         }
       ]
     })
-    .then(users => {
-      const resObj = users.map(user => {
+      .then(users => {
+        const resObj = users.map(user => {
 
-        //tidy up the user data
-        // return Object.assign(
-        //   {},
-        //   {
-        //     user_id: Account.id,
-        //     username: Account.username,
-        //     role: Account.role,
-        //     posts: Account.posts.map(post => {
-        //
-        //       //tidy up the post data
-        //       return Object.assign(
-        //         {},
-        //         {
-        //           post_id: post.id,
-        //           user_id: post.user_id,
-        //           content: post.content,
-        //           comments: post.comments.map(comment => {
-        //
-        //             //tidy up the comment data
-        //             return Object.assign(
-        //               {},
-        //               {
-        //                 comment_id: comment.id,
-        //                 post_id: comment.post_id,
-        //                 commenter: comment.commenter_username,
-        //                 commenter_email: comment.commenter_email,
-        //                 content: comment.content
-        //               }
-        //             )
-        //           })
-        //         }
-        //         )
-        //     })
-        //   }
-        // )
+          //tidy up the user data
+          // return Object.assign(
+          //   {},
+          //   {
+          //     user_id: Account.id,
+          //     username: Account.username,
+          //     role: Account.role,
+          //     posts: Account.posts.map(post => {
+          //
+          //       //tidy up the post data
+          //       return Object.assign(
+          //         {},
+          //         {
+          //           post_id: post.id,
+          //           user_id: post.user_id,
+          //           content: post.content,
+          //           comments: post.comments.map(comment => {
+          //
+          //             //tidy up the comment data
+          //             return Object.assign(
+          //               {},
+          //               {
+          //                 comment_id: comment.id,
+          //                 post_id: comment.post_id,
+          //                 commenter: comment.commenter_username,
+          //                 commenter_email: comment.commenter_email,
+          //                 content: comment.content
+          //               }
+          //             )
+          //           })
+          //         }
+          //         )
+          //     })
+          //   }
+          // )
+        });
+        res.json(resObj)
       });
-      res.json(resObj)
-    });
   });
 
 
 
 
   //when user 'adds an item' to their fridge
-  app.post('/api/addItem', function(req, res) {
+  app.post('/api/addItem', function (req, res) {
     console.log("add item fired");
 
     const data = req.body;
@@ -178,10 +172,10 @@ module.exports = function (app, passport) {
     // })
 
     db.item.findOne({
-      where:{
-        itemName:req.body.name
+      where: {
+        itemName: req.body.name
       }
-    }).then(function(results){
+    }).then(function (results) {
       // console.log(results)
       // console.log(results.dataValues.id);
       // const newRow = {
@@ -222,14 +216,14 @@ module.exports = function (app, passport) {
   }); // end app.post api/addItem
 
 
-  app.get("/api/loadSavedItems", function(req, res){
+  app.get("/api/loadSavedItems", function (req, res) {
     console.log(req.user.id);
     db.fridge.findAll({
-      include:[db.item],
-      where:{
+      include: [db.item],
+      where: {
         accountId: req.user.id
       }
-    }).then(function(results){
+    }).then(function (results) {
       console.log("returning data")
       console.log(results);
       res.json(results);
