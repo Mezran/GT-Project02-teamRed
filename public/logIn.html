@@ -84,17 +84,7 @@
       $.post('/login', credentials)
         .then(function(data) {
           localStorage.setItem("username", data.username);
-          // console.log(data.message);
-          // if(data.message == 1){
-          //
-          //   // $.get('/api/getfridge',$('#username').val().trim() )
-          // } else {
-          //   alert("bad login");
-          // }
-          // console.log(data);
-          // login user
-          // localStorage.setItem('username', data.username);
-          // localStorage.setItem('logged_in', true);
+          
           window.location = '/info';
         }).catch(err => {
           window.location = '/';
