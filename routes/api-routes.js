@@ -39,9 +39,20 @@ module.exports = function (app, passport) {
     res.end();
   });
 
-  app.post('/login', passport.authenticate('local'), function (req, res) {
-    res.json({ username: req.user.username });
-  });
+
+  app.post('/login',
+  passport.authenticate('local', {
+    successRedirect: '/checkbox',
+    failureRedirect: '/login',
+    failerFlash:true
+  })
+);
+
+  // don't know if we need this or not
+//   app.post('/login', passport.authenticate('local'), function (req, res) {
+//     res.json({ username: req.user.username });
+//   });
+
 
   app.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/logIn.html'))
@@ -199,8 +210,10 @@ module.exports = function (app, passport) {
           id: req.user.id
         }
       }).then(fridge => {
+        // console.log(results);
+        console.log(fridge);
         fridge.addItem(results.dataValues.id, results.dataValues.id)
-        res.json("done");
+        res.json(results);
       })
       // console.log(db.fridge);
 
@@ -234,6 +247,25 @@ module.exports = function (app, passport) {
       res.json(results);
     })
   })
+
+
+
+
+  app.delete("/api/deleteItem/:item", function(req, res){
+    db.fridge.findOne({
+      where:{
+        accountId:req.user.id
+      }
+    }).then(function(fridge){
+      fridge.removeItem(req.params.item);
+      res.json({message:"completed"})
+    })
+  })
+
+      // db.Todo.destroy({where:{id:req.params.id}})
+      // .then(function(results){
+      //   res.json({message:"Success"});
+      // })
 
 
 

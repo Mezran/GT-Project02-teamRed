@@ -14,6 +14,7 @@ $(document).ready(function () {
 
     $("#addToPantry").on("click", function () {
 
+<<<<<<< HEAD
         const dataToSend = {
             name: $('#nameSearch').val()
         }
@@ -27,22 +28,44 @@ $(document).ready(function () {
                 $(".modal").hide();
                 $("#pantryInput").val("")
             })
+=======
+      const dataToSend = {
+        name:$('#nameSearch').val()
+      }
+
+      console.log(dataToSend);
+
+
+
+      $.post('/api/addItem', dataToSend)
+      .then(function(data){
+
+        // $("#pantryList").append($("#pantryInput").val() + "<br>")
+        // console.log($("#pantryInput").val())
+        $(".modal").hide();
+        $("#pantryInput").val("")
+
+        console.log("THIS IS MY DATA")
+        console.log(data);
+>>>>>>> 28089b614cbb162a2d60327c4875fbaeb17b8b91
         let nameValue = $("#nameSearch").val();
         let quantitySearch = $("#quantitySearch").val();
         let expDateSearch = $("#expDateSearch").val();
         let tbd = $("#tbd").val();
 
         $("#tableBody").append(`
-            <tr>
+            <tr id="${data.id}">
             <td>${nameValue}</td>
             <td>${quantitySearch}</td>
             <td>${expDateSearch}</td>
-            
             </tr>
         `)
 
         $("#addItemModal").hide();
         $(".input").val("");
+
+      })
+
     });
 
     $("#cancel").on("click", function () {
@@ -84,8 +107,23 @@ $(document).ready(function () {
 
     // let rowAnswer = $("#tableBody").text();
 
+<<<<<<< HEAD
     $("#tableBody").on("click", 'tr', function () {
         $(this).remove()
+=======
+    $("#tableBody").on("click", 'tr', function(){
+      // DESTROY to remove item from database.
+      console.log(this.id);
+      // const userId =
+      const itemId = $(this).attr("id");
+
+      $.ajax({
+      method: "DELETE",
+      url: "/api/deleteItem/" + itemId
+    })
+
+        $(this).remove();
+>>>>>>> 28089b614cbb162a2d60327c4875fbaeb17b8b91
     })
 
 
