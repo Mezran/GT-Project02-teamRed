@@ -2,7 +2,7 @@
 
 function api() {
 
-    const apiKey = "&apiKey=baedc2b8641b49bc936eef03969c23dd"
+    const apiKey = "&apiKey=b516d1d8d8d2433395840447b28b3022"
     let title = "";
     let image = "";
     let id = "";
@@ -59,18 +59,26 @@ function api() {
 // res.results[0].id
 
 $("#foodTitle").on("click", 'tr', function () {
+    const apiKey = "&apiKey=b516d1d8d8d2433395840447b28b3022"
     $("#api").show();
 
     const id = $(this).attr("data-id");
-    queryUrl2 = "https://api.spoonacular.com/recipes/"+id+"/summary?" + apiKey;
+    
+    queryUrl2="https://api.spoonacular.com/recipes/"+id+"/analyzedInstructions?"+apiKey;
+    // queryUrl2 = "https://api.spoonacular.com/recipes/"+id+"/summary?" + apiKey;
+    // queryUrl2= "https://api.spoonacular.com/recipes/"+id+"/ingredientWidget?"+apiKey;
     console.log(queryUrl2)
 
     $.ajax({
         url: queryUrl2,
         method: "GET"
     }).then(function (res) {
-        $("#apiContent").append(res)
+
+        console.log(res[0])
+        for(let i=0;i<res[0].steps.length;i++){
+        $("#apiContent").append(res[0].steps[i].step)
         console.log(res)
+        }
     });
 
 });
