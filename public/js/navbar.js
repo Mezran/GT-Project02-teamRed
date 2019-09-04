@@ -1,53 +1,66 @@
 $(document).ready(function () {
 
+    const apiKey = "&apiKey=baedc2b8641b49bc936eef03969c23dd"
+    let title = "";
+    let image = "";
+    let id = "";
 
 
     // Add Item Button For Modal Popup
+
+    
+
+
     $("#addItem").on("click", function () {
         $("#addItemModal").show();
+        $("#foodTitle").empty();
     });
 
     $(".delete").on("click", function () {
         $("#addItemModal").hide();
         $(".input").val("")
+        api();
     });
 
     $("#addToPantry").on("click", function () {
 
-      const dataToSend = {
-        name:$('#nameSearch').val()
-      }
+        const dataToSend = {
+            name: $('#nameSearch').val()
+        }
 
-      console.log(dataToSend);
+        console.log(dataToSend);
 
-      $.post('/api/addItem', dataToSend)
-      .then(function(data){
-        $("#pantryList").append($("#pantryInput").val() + "<br>")
-        // console.log($("#pantryInput").val())
-        $(".modal").hide();
-        $("#pantryInput").val("")
-      })
+        $.post('/api/addItem', dataToSend)
+            .then(function (data) {
+                $("#pantryList").append($("#pantryInput").val() + "<br>")
+                // console.log($("#pantryInput").val())
+                $(".modal").hide();
+                $("#pantryInput").val("")
+            })
         let nameValue = $("#nameSearch").val();
         let quantitySearch = $("#quantitySearch").val();
         let expDateSearch = $("#expDateSearch").val();
-        let tbd = $("#tbd").val();
+
 
         $("#tableBody").append(`
             <tr>
-            <td>${nameValue}</td>
+            <td class="ingredient-name">${nameValue} </td>
             <td>${quantitySearch}</td>
             <td>${expDateSearch}</td>
             
             </tr>
         `)
 
+
         $("#addItemModal").hide();
         $(".input").val("");
+        api();
     });
 
     $("#cancel").on("click", function () {
         $("#addItemModal").hide();
         $(".input").val("")
+        api();
     });
 
 
@@ -67,11 +80,10 @@ $(document).ready(function () {
     });
 
     // Delete On Clicked Row
-
-    // let rowAnswer = $("#tableBody").text();
-
-    $("#tableBody").on("click", 'tr', function(){
+    $("#tableBody").on("click", 'tr', function () {
         $(this).remove()
+        $("#foodTitle").empty();
+        api();
     })
 
 
@@ -88,12 +100,12 @@ $(document).ready(function () {
     //         'background-repeat': "no-repeat",
     //         'background-position': "center"
     //     })
-        // $(this).css('background', 'url( https://icon-library.net/images/trash-can-vector-icon/trash-can-vector-icon-15.jpg)')
-        // $(this).css('background-size', "100% 2.2em")
-        // $(this).css('background-repeat', "no-repeat")
-        // $(this).css('background-position-x', "20px")
+    // $(this).css('background', 'url( https://icon-library.net/images/trash-can-vector-icon/trash-can-vector-icon-15.jpg)')
+    // $(this).css('background-size', "100% 2.2em")
+    // $(this).css('background-repeat', "no-repeat")
+    // $(this).css('background-position-x', "20px")
 
-        // $(this).css('background-position', "center top")
+    // $(this).css('background-position', "center top")
     // })
 
 
