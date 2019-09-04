@@ -1,20 +1,34 @@
 $(document).ready(function () {
 
+    const apiKey = "&apiKey=baedc2b8641b49bc936eef03969c23dd"
+    let title = "";
+    let image = "";
+    let id = "";
 
 
     // Add Item Button For Modal Popup
+
+    
+
+
     $("#addItem").on("click", function () {
         $("#addItemModal").show();
+        // $("#foodTitle").empty();
     });
 
     $(".delete").on("click", function () {
         $("#addItemModal").hide();
         $(".input").val("")
+        api();
     });
 
     $("#addToPantry").on("click", function () {
 
-<<<<<<< HEAD
+// <<<<<<< HEAD
+//         const dataToSend = {
+//             name: $('#nameSearch').val()
+//         }
+
         const dataToSend = {
             name: $('#nameSearch').val()
         }
@@ -28,12 +42,8 @@ $(document).ready(function () {
                 $(".modal").hide();
                 $("#pantryInput").val("")
             })
-=======
-      const dataToSend = {
-        name:$('#nameSearch').val()
-      }
 
-      console.log(dataToSend);
+        console.log(dataToSend);
 
 
 
@@ -47,20 +57,21 @@ $(document).ready(function () {
 
         console.log("THIS IS MY DATA")
         console.log(data);
->>>>>>> 28089b614cbb162a2d60327c4875fbaeb17b8b91
+
         let nameValue = $("#nameSearch").val();
         let quantitySearch = $("#quantitySearch").val();
         let expDateSearch = $("#expDateSearch").val();
-        let tbd = $("#tbd").val();
+
 
         $("#tableBody").append(`
             <tr id="${data.id}">
-            <td>${nameValue}</td>
+            <td class="ingredient-name">${nameValue}</td>
             <td>${quantitySearch}</td>
             <td>${expDateSearch}</td>
             </tr>
         `)
 
+        api();
         $("#addItemModal").hide();
         $(".input").val("");
 
@@ -71,6 +82,7 @@ $(document).ready(function () {
     $("#cancel").on("click", function () {
         $("#addItemModal").hide();
         $(".input").val("")
+        api();
     });
 
 
@@ -107,10 +119,7 @@ $(document).ready(function () {
 
     // let rowAnswer = $("#tableBody").text();
 
-<<<<<<< HEAD
-    $("#tableBody").on("click", 'tr', function () {
-        $(this).remove()
-=======
+
     $("#tableBody").on("click", 'tr', function(){
       // DESTROY to remove item from database.
       console.log(this.id);
@@ -123,7 +132,9 @@ $(document).ready(function () {
     })
 
         $(this).remove();
->>>>>>> 28089b614cbb162a2d60327c4875fbaeb17b8b91
+        $("#foodTitle").empty();
+        api();
+
     })
 
 

@@ -103,11 +103,22 @@
                             <a id="italian">Italian</a>
                         </p>
                         <p id="preferenceList">
-                            <div class="panel-block">
+
+                                <div class="table-container">
+                                        <table  class="table is-hoverable is-fullwidth is-striped">
+
+
+                                            <tbody id="foodTitle">
+                                            </tbody>
+
+                                        </table>
+                                    </div>
+                           
+                            <!-- <div class="panel-block">
                                 <button class="button is-link is-outlined is-fullwidth">
                                     Submit
                                 </button>
-                            </div>
+                            </div> -->
                         </p>
                         <!-- <a class="panel-block is-active">
                             <span class="panel-icon">
@@ -168,13 +179,38 @@
     </div>
 
 
+
+    <!-- For Recipe Api popup -->
+
+    <div id="api" class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+              <header class="modal-card-head">
+                <p class="modal-card-title">Ready to Cook</p>
+                <button id="apiClose" class="delete" aria-label="close"></button>
+              </header>
+              <section class="modal-card-body">
+                  <p id="apiContent"></p>
+                <!-- Content ... -->
+              </section>
+              <footer class="modal-card-foot">
+                <button id="apiOkay" class="button is-success">Okay</button>
+              </footer>
+            </div>
+          </div>
+
+
+
     <footer id="sticky">
         Copyright @ Orange-red-Project-2 2019
     </footer>
 
 
-    <script src="./js/navbar.js"></script>
+    
     <script src="./js/backgroundImage.js"></script>
+    <script src="./js/recipe.js"></script>
+    <script src="./js/navbar.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
