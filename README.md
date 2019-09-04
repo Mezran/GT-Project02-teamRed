@@ -2,14 +2,14 @@
 
 ### Team members name/github:
 * Stephen Allen (Mezran)
-* Michael McCarthy (michaelmccarty)
+* Michael McCarty (michaelmccarty)
 * Helen Kim (HK490)
 * Aijah Chappell (AijahChappell)
 
 ### Due date
 Sept 5, 2019
 
-### Instillation
+### Installation
 - run npm install
 - insure local database is created
 - change congif.json to reflect database name and password
