@@ -4,6 +4,10 @@ const path = require("path");
 
 module.exports = function (app, passport) {
 
+  app.get("/protectedRoute", function (req, res) {
+    res.json(req.user);
+  });
+
   // app.post('/api/login', function(req, res){
   //   const userAccountName = req.body.username;
   //   db.account.findOne({
@@ -29,17 +33,18 @@ module.exports = function (app, passport) {
   //
   // });// end app.post
 
+  app.get('/logout', (req, res) => {
+    console.log("logout pressed");
+    req.logout();
+    res.end();
+  });
 
   app.post('/login', passport.authenticate('local'), function (req, res) {
     res.json({ username: req.user.username });
   });
 
-
   app.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/logIn.html'))
-    // if (req.user) {
-    //   res.send(`Welcome ${req.user.displayName}!`);
-    // } else res.redirect('/login');
   });
 
 

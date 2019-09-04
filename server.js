@@ -24,36 +24,14 @@ app.use(express.urlencoded({
 app.use(express.json());
 app.use(express.static('public'));
 
-app.use(session({
-  secret: process.env.SESSIONKEY,
-  resave: false,
-  saveUninitialized: true
-}));
-
-app.use(passport.initialize());
-app.use(passport.session());
-
-
-
-// require api and html routing
-require('./routes/api-routes.js')(app, passport);
-require('./routes/html-routes.js')(app, path);
-
-
-
-
-
-
-
 // authentication
 
 passport.use(new LocalStrategy(
   function (username, password, done) {
-    console.log(account);
     console.log(username);
     console.log(password);
 
-    account.findOne({
+    db.account.findOne({
       where: {
         username: username
       }
@@ -84,9 +62,10 @@ passport.use(new GoogleStrategy({
   callbackURL: "http://localhost:3000/auth/google/callback"
 },
   function (accessToken, refreshToken, profile, done) {
+
     account.findOrCreate({
       where: {
-        googleId: profile.id
+        googleID: profile.id
       }
     }).then(function (data) {
 
@@ -100,23 +79,30 @@ passport.use(new GoogleStrategy({
 //end passport's Google strategy for login
 
 
-
-
-
-
 passport.serializeUser(function (user, done) {
-  // console.log(user);
-  done(null, user);
+  done(null, user.id);
 });
 
-passport.deserializeUser(function (user, done) {
-  done(null, user);
+passport.deserializeUser(function(id, done) {
+  db.account.findByPk(id).then(function (user) {
+    done(null, user);
+  }).catch(function (err) {
+    done(err)
+  });
 });
 
+app.use(session({
+  secret: process.env.SESSIONKEY,
+  resave: false,
+  saveUninitialized: true
+}));
 
+app.use(passport.initialize());
+app.use(passport.session());
 
-
-
+// require api and html routing
+require('./routes/api-routes.js')(app, passport);
+require('./routes/html-routes.js')(app, passport);
 
 
 // make server listen   {force:true}

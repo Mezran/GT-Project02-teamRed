@@ -14,19 +14,19 @@ $(document).ready(function () {
 
     $("#addToPantry").on("click", function () {
 
-      const dataToSend = {
-        name:$('#nameSearch').val()
-      }
+        const dataToSend = {
+            name: $('#nameSearch').val()
+        }
 
-      console.log(dataToSend);
+        console.log(dataToSend);
 
-      $.post('/api/addItem', dataToSend)
-      .then(function(data){
-        $("#pantryList").append($("#pantryInput").val() + "<br>")
-        // console.log($("#pantryInput").val())
-        $(".modal").hide();
-        $("#pantryInput").val("")
-      })
+        $.post('/api/addItem', dataToSend)
+            .then(function (data) {
+                $("#pantryList").append($("#pantryInput").val() + "<br>")
+                // console.log($("#pantryInput").val())
+                $(".modal").hide();
+                $("#pantryInput").val("")
+            })
         let nameValue = $("#nameSearch").val();
         let quantitySearch = $("#quantitySearch").val();
         let expDateSearch = $("#expDateSearch").val();
@@ -51,6 +51,20 @@ $(document).ready(function () {
     });
 
 
+    $("#logOut").on("click", function () {
+
+        localStorage.removeItem('username');
+
+        $.ajax({
+            method: "get",
+            url: "/logout"
+        }).then(function (res) {
+            console.log("Data: " + res.data);
+            localStorage.removeItem('username');
+            window.location.href = "/logIn.html"
+        }
+        );
+    });
 
 
     // Add Image Button
@@ -70,7 +84,7 @@ $(document).ready(function () {
 
     // let rowAnswer = $("#tableBody").text();
 
-    $("#tableBody").on("click", 'tr', function(){
+    $("#tableBody").on("click", 'tr', function () {
         $(this).remove()
     })
 
@@ -88,20 +102,12 @@ $(document).ready(function () {
     //         'background-repeat': "no-repeat",
     //         'background-position': "center"
     //     })
-        // $(this).css('background', 'url( https://icon-library.net/images/trash-can-vector-icon/trash-can-vector-icon-15.jpg)')
-        // $(this).css('background-size', "100% 2.2em")
-        // $(this).css('background-repeat', "no-repeat")
-        // $(this).css('background-position-x', "20px")
+    // $(this).css('background', 'url( https://icon-library.net/images/trash-can-vector-icon/trash-can-vector-icon-15.jpg)')
+    // $(this).css('background-size', "100% 2.2em")
+    // $(this).css('background-repeat', "no-repeat")
+    // $(this).css('background-position-x', "20px")
 
-        // $(this).css('background-position', "center top")
+    // $(this).css('background-position', "center top")
     // })
-
-
-
-
-
-
-
-
 
 });
