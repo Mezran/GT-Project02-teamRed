@@ -24,12 +24,11 @@ $(document).ready(function () {
 
     $("#addToPantry").on("click", function () {
 
-<<<<<<< HEAD
-        const dataToSend = {
-            name: $('#nameSearch').val()
-        }
-=======
-<<<<<<< HEAD
+// <<<<<<< HEAD
+//         const dataToSend = {
+//             name: $('#nameSearch').val()
+//         }
+
         const dataToSend = {
             name: $('#nameSearch').val()
         }
@@ -43,11 +42,6 @@ $(document).ready(function () {
                 $(".modal").hide();
                 $("#pantryInput").val("")
             })
-=======
-      const dataToSend = {
-        name:$('#nameSearch').val()
-      }
->>>>>>> 3fb455edd491848d29d122c98e4b7e959e12e116
 
         console.log(dataToSend);
 
@@ -63,7 +57,7 @@ $(document).ready(function () {
 
         console.log("THIS IS MY DATA")
         console.log(data);
->>>>>>> 28089b614cbb162a2d60327c4875fbaeb17b8b91
+
         let nameValue = $("#nameSearch").val();
         let quantitySearch = $("#quantitySearch").val();
         let expDateSearch = $("#expDateSearch").val();
@@ -125,10 +119,7 @@ $(document).ready(function () {
 
     // let rowAnswer = $("#tableBody").text();
 
-<<<<<<< HEAD
-    $("#tableBody").on("click", 'tr', function () {
-        $(this).remove()
-=======
+
     $("#tableBody").on("click", 'tr', function(){
       // DESTROY to remove item from database.
       console.log(this.id);
@@ -141,12 +132,9 @@ $(document).ready(function () {
     })
 
         $(this).remove();
-<<<<<<< HEAD
         $("#foodTitle").empty();
         api();
-=======
->>>>>>> 28089b614cbb162a2d60327c4875fbaeb17b8b91
->>>>>>> 3fb455edd491848d29d122c98e4b7e959e12e116
+
     })
 
 
