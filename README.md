@@ -2,7 +2,7 @@
 
 ### Team members name/github:
 * Stephen Allen (Mezran)
-* Michael McCarthy (michaelmccarthy)
+* Michael McCarthy (michaelmccarty)
 * Helen Kim (HK490)
 * Aijah Chappell (AijahChappell)
 
