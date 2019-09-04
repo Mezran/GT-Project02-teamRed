@@ -43,7 +43,7 @@ function api() {
 
             $("#foodTitle").append(`
             <tr data-id="${id}">
-            <td>${title}</td>
+            <td>${title }</td>
             </tr>
             `)
             console.log(result[i])
@@ -63,8 +63,8 @@ $("#foodTitle").on("click", 'tr', function () {
     $("#api").show();
 
     const id = $(this).attr("data-id");
-    
-    queryUrl2="https://api.spoonacular.com/recipes/"+id+"/analyzedInstructions?"+apiKey;
+
+    queryUrl2 = "https://api.spoonacular.com/recipes/" + id + "/analyzedInstructions?" + apiKey;
     // queryUrl2 = "https://api.spoonacular.com/recipes/"+id+"/summary?" + apiKey;
     // queryUrl2= "https://api.spoonacular.com/recipes/"+id+"/ingredientWidget?"+apiKey;
     console.log(queryUrl2)
@@ -74,10 +74,15 @@ $("#foodTitle").on("click", 'tr', function () {
         method: "GET"
     }).then(function (res) {
 
+        // let steps =res[0].steps[i].step
+        // steps=steps.split(".").join(  )
+
         console.log(res[0])
-        for(let i=0;i<res[0].steps.length;i++){
-        $("#apiContent").append(res[0].steps[i].step)
-        console.log(res)
+        for (let i = 0; i < res[0].steps.length; i++) {
+
+            let steps = res[0].steps[i].step
+            $("#apiContent").append(`<div>${i+1}. ${steps}</div>`)
+            console.log(res)
         }
     });
 
@@ -117,7 +122,7 @@ $("#apiOkay").on("click", function () {
     // }).then(function (result) {
 
 
-       
+
 
     //     for (let i = 0; i < result.length; i++) {
 

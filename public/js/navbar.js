@@ -8,7 +8,7 @@ $(document).ready(function () {
 
     // Add Item Button For Modal Popup
 
-    
+
 
 
     $("#addItem").on("click", function () {
@@ -37,7 +37,7 @@ $(document).ready(function () {
 
         $.post('/api/addItem', dataToSend)
             .then(function (data) {
-                $("#pantryList").append($("#pantryInput").val() + "<br>")
+                // $("#pantryList").append($("#pantryInput").val() + "<br>")
                 // console.log($("#pantryInput").val())
                 $(".modal").hide();
                 $("#pantryInput").val("")
@@ -53,12 +53,12 @@ $(document).ready(function () {
         // $("#pantryList").append($("#pantryInput").val() + "<br>")
         // console.log($("#pantryInput").val())
         $(".modal").hide();
-        $("#pantryInput").val("")
+        $("#pantryInput").val(" ")
 
         console.log("THIS IS MY DATA")
         console.log(data);
 
-        let nameValue = $("#nameSearch").val();
+        let nameValue = $("#nameSearch").val()+" ";
         let quantitySearch = $("#quantitySearch").val();
         let expDateSearch = $("#expDateSearch").val();
 
@@ -71,7 +71,7 @@ $(document).ready(function () {
             </tr>
         `)
 
-        api();
+       
         $("#addItemModal").hide();
         $(".input").val("");
 
@@ -137,6 +137,12 @@ $(document).ready(function () {
 
     })
 
+
+    // Submit append API
+    $("#reqSubmit").on("click", function(){
+        api();
+
+    })
 
     // $("#tableBody").on("mouseleave","tr", function() {
     //     $(this).css('background', 'white')
