@@ -20,29 +20,36 @@ $(document).ready(function () {
 
       console.log(dataToSend);
 
+
+
       $.post('/api/addItem', dataToSend)
       .then(function(data){
-        $("#pantryList").append($("#pantryInput").val() + "<br>")
+
+        // $("#pantryList").append($("#pantryInput").val() + "<br>")
         // console.log($("#pantryInput").val())
         $(".modal").hide();
         $("#pantryInput").val("")
-      })
+
+        console.log("THIS IS MY DATA")
+        console.log(data);
         let nameValue = $("#nameSearch").val();
         let quantitySearch = $("#quantitySearch").val();
         let expDateSearch = $("#expDateSearch").val();
         let tbd = $("#tbd").val();
 
         $("#tableBody").append(`
-            <tr>
+            <tr id="${data.id}">
             <td>${nameValue}</td>
             <td>${quantitySearch}</td>
             <td>${expDateSearch}</td>
-            
             </tr>
         `)
 
         $("#addItemModal").hide();
         $(".input").val("");
+
+      })
+
     });
 
     $("#cancel").on("click", function () {
@@ -71,7 +78,17 @@ $(document).ready(function () {
     // let rowAnswer = $("#tableBody").text();
 
     $("#tableBody").on("click", 'tr', function(){
-        $(this).remove()
+      // DESTROY to remove item from database.
+      console.log(this.id);
+      // const userId =
+      const itemId = $(this).attr("id");
+
+      $.ajax({
+      method: "DELETE",
+      url: "/api/deleteItem/" + itemId
+    })
+
+        $(this).remove();
     })
 
 
