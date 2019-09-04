@@ -13,7 +13,7 @@ $(document).ready(function () {
 
     $("#addItem").on("click", function () {
         $("#addItemModal").show();
-        $("#foodTitle").empty();
+        // $("#foodTitle").empty();
     });
 
     $(".delete").on("click", function () {
@@ -30,15 +30,6 @@ $(document).ready(function () {
 
         console.log(dataToSend);
 
-<<<<<<< HEAD
-        $.post('/api/addItem', dataToSend)
-            .then(function (data) {
-                $("#pantryList").append($("#pantryInput").val() + "<br>")
-                // console.log($("#pantryInput").val())
-                $(".modal").hide();
-                $("#pantryInput").val("")
-            })
-=======
 
 
       $.post('/api/addItem', dataToSend)
@@ -51,35 +42,25 @@ $(document).ready(function () {
 
         console.log("THIS IS MY DATA")
         console.log(data);
->>>>>>> 28089b614cbb162a2d60327c4875fbaeb17b8b91
         let nameValue = $("#nameSearch").val();
         let quantitySearch = $("#quantitySearch").val();
         let expDateSearch = $("#expDateSearch").val();
 
 
         $("#tableBody").append(`
-<<<<<<< HEAD
-            <tr>
-            <td class="ingredient-name">${nameValue} </td>
-=======
             <tr id="${data.id}">
-            <td>${nameValue}</td>
->>>>>>> 28089b614cbb162a2d60327c4875fbaeb17b8b91
+            <td class="ingredient-name">${nameValue}</td>
             <td>${quantitySearch}</td>
             <td>${expDateSearch}</td>
             </tr>
         `)
 
-
+        api();
         $("#addItemModal").hide();
         $(".input").val("");
-<<<<<<< HEAD
-        api();
-=======
 
       })
 
->>>>>>> 28089b614cbb162a2d60327c4875fbaeb17b8b91
     });
 
     $("#cancel").on("click", function () {
@@ -105,12 +86,6 @@ $(document).ready(function () {
     });
 
     // Delete On Clicked Row
-<<<<<<< HEAD
-    $("#tableBody").on("click", 'tr', function () {
-        $(this).remove()
-        $("#foodTitle").empty();
-        api();
-=======
 
     // let rowAnswer = $("#tableBody").text();
 
@@ -126,7 +101,8 @@ $(document).ready(function () {
     })
 
         $(this).remove();
->>>>>>> 28089b614cbb162a2d60327c4875fbaeb17b8b91
+        $("#foodTitle").empty();
+        api();
     })
 
 

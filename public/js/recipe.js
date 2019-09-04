@@ -8,6 +8,7 @@ function api() {
     let id = "";
 
     let ingredientInput = $(".ingredient-name").text()
+    console.log(ingredientInput)
     ingredientInput = ingredientInput.split(" ").join(",+")
     console.log("input:" + ingredientInput)
 
@@ -33,7 +34,7 @@ function api() {
         url: queryUrl,
         method: "GET"
     }).then(function (result) {
-
+        console.log(result)
         for (let i = 0; i < result.length; i++) {
 
             title = result[i].title
@@ -88,48 +89,48 @@ $("#apiOkay").on("click", function () {
 
 
 
-    const apiKey = "&apiKey=baedc2b8641b49bc936eef03969c23dd"
-    let title = "";
-    let image = "";
-    let id = "";
-    let ingredientInput = $(".ingredient-name").text()
-    ingredientInput = ingredientInput.split(" ").join(",+")
-    console.log("input:" + ingredientInput)
+    // const apiKey = "&apiKey=baedc2b8641b49bc936eef03969c23dd"
+    // let title = "";
+    // let image = "";
+    // let id = "";
+    // let ingredientInput = $(".ingredient-name").text()
+    // ingredientInput = ingredientInput.split(" ").join(",+")
+    // console.log("input:" + ingredientInput)
 
-    let ingredients = "&includeIngredients=" + ingredientInput;
-    const queryUrl = "https://api.spoonacular.com/recipes/complexSearch?cuisine=mexican" + ingredients + apiKey;
-    console.log(querUrl)
+    // let ingredients = "&includeIngredients=" + ingredientInput;
+    // const queryUrl = "https://api.spoonacular.com/recipes/complexSearch?cuisine=mexican" + ingredients + apiKey;
+    // console.log(querUrl)
 
 
 
-    $.ajax({
-        url: queryUrl,
-        method: "GET"
-    }).then(function (result) {
+    // $.ajax({
+    //     url: queryUrl,
+    //     method: "GET"
+    // }).then(function (result) {
 
 
        
 
-        for (let i = 0; i < result.length; i++) {
+    //     for (let i = 0; i < result.length; i++) {
 
 
-            $("#mexican").on("click", function () {
-                alert(result[i].title)
+    //         $("#mexican").on("click", function () {
+    //             alert(result[i].title)
 
-                title = result[i].title
-                image = result[i].image
-                id = result[i].id
+    //             title = result[i].title
+    //             image = result[i].image
+    //             id = result[i].id
 
-                $("#foodTitle").append(`
-                <tr>
-                <td>${title}</td>
-                </tr>
-                `)
-                console.log(result[i])
-            });
+    //             $("#foodTitle").append(`
+    //             <tr>
+    //             <td>${title}</td>
+    //             </tr>
+    //             `)
+    //             console.log(result[i])
+    //         });
 
-        }
+    //     }
 
-    });
+    // });
 
 

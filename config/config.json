@@ -1,11 +1,7 @@
 {
   "development": {
     "username": "root",
-<<<<<<< HEAD
     "password": "helen490",
-=======
-    "password": "Mezranthedruid1",
->>>>>>> 28089b614cbb162a2d60327c4875fbaeb17b8b91
     "database": "dbFridge",
     "host": "127.0.0.1",
     "dialect": "mysql",
