@@ -2,7 +2,7 @@
 
 ### Team members name/github:
 * Stephen Allen (Mezran)
-* Michael McCarthy (michaelmccarthy)
+* Michael McCarthy (michaelmccarty)
 * Helen Kim (HK490)
 * Aijah Chappell (AijahChappell)
 
@@ -13,6 +13,11 @@ Sept 5, 2019
 - run npm install
 - insure local database is created
 - change congif.json to reflect database name and password
+- run server
+- close server
+- run command 'sequelize db:seed:all' to seed items Database
+- run server
+- go to 'localhost:3000'
 
 
 ### Requirements
