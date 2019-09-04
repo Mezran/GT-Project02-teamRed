@@ -58,13 +58,13 @@
                             <div class="content" id="mealContent">
                                 <p id="pantryList">
                                     <div class="table-container">
-                                        <table  class="table is-hoverable is-fullwidth is-striped">
+                                        <table class="table is-hoverable is-fullwidth is-striped">
                                             <thead>
                                                 <tr>
                                                     <th>Name</th>
                                                     <th>Quantity</th>
                                                     <th>Exp. Date</th>
-                                                   
+
                                                 </tr>
                                             </thead>
 
@@ -86,13 +86,18 @@
 
                     <nav class="panel" id="card">
                         <div class="panel-block">
+                            <button id="reqSubmit" class="button is-link is-outlined is-fullwidth">
+                                Submit
+                            </button>
+                        </div>
+                        <!-- <div class="panel-block">
                             <p class="control has-icons-left">
                                 <input class="input is-medium" type="text" placeholder="search">
                                 <span class="icon is-medium is-left">
                                     <i class="fas fa-search" aria-hidden="true"></i>
                                 </span>
                             </p>
-                        </div>
+                        </div> -->
                         <p class="panel-tabs">
                             <a class="is-active" id="all">all</a>
                             <a id="veg">Vegetarian</a>
@@ -104,16 +109,16 @@
                         </p>
                         <p id="preferenceList">
 
-                                <div class="table-container">
-                                        <table  class="table is-hoverable is-fullwidth is-striped">
+                            <div class="table-container">
+                                <table class="table is-hoverable is-fullwidth is-striped">
 
 
-                                            <tbody id="foodTitle">
-                                            </tbody>
+                                    <tbody id="foodTitle">
+                                    </tbody>
 
-                                        </table>
-                                    </div>
-                           
+                                </table>
+                            </div>
+
                             <!-- <div class="panel-block">
                                 <button class="button is-link is-outlined is-fullwidth">
                                     Submit
@@ -160,7 +165,7 @@
                             </td>
                             <td><input id="expDateSearch" class="input is-medium" type="text" placeholder="Exp. Date">
                             </td>
-                      
+
                         </tr>
 
 
@@ -183,21 +188,21 @@
     <!-- For Recipe Api popup -->
 
     <div id="api" class="modal">
-            <div class="modal-background"></div>
-            <div class="modal-card">
-              <header class="modal-card-head">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
                 <p class="modal-card-title">Ready to Cook</p>
                 <button id="apiClose" class="delete" aria-label="close"></button>
-              </header>
-              <section class="modal-card-body">
-                  <p id="apiContent"></p>
+            </header>
+            <section class="modal-card-body">
+                <p id="apiContent"></p>
                 <!-- Content ... -->
-              </section>
-              <footer class="modal-card-foot">
+            </section>
+            <footer class="modal-card-foot">
                 <button id="apiOkay" class="button is-success">Okay</button>
-              </footer>
-            </div>
-          </div>
+            </footer>
+        </div>
+    </div>
 
 
 
@@ -206,7 +211,7 @@
     </footer>
 
 
-    
+
     <script src="./js/backgroundImage.js"></script>
     <script src="./js/recipe.js"></script>
     <script src="./js/navbar.js"></script>
