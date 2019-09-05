@@ -126,7 +126,7 @@ module.exports = {
           for (let i = 0; i < arrayOfItems.length; i++) {
             let date = new Date();
             items.push({
-              id: i,
+              // id: i,
               itemName: arrayOfItems[i],
               createdAt: date,
               updatedAt: date

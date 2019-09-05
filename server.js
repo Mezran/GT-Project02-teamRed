@@ -59,7 +59,7 @@ passport.use(new LocalStrategy(
 passport.use(new GoogleStrategy({
   clientID: "842729916089-4bdb3mdn3nlluvv2sv8ekld8vjveunqj.apps.googleusercontent.com",
   clientSecret: "VPW_pakQUn2tNKAnPDQuTcYC",
-  callbackURL: "http://localhost:3000/auth/google/callback"
+  callbackURL: "/auth/google/callback"
 },
   function (accessToken, refreshToken, profile, done) {
 
@@ -75,7 +75,7 @@ passport.use(new GoogleStrategy({
     });
   }
 ));
-
+//asd 
 //end passport's Google strategy for login
 
 
