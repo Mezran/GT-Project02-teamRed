@@ -176,65 +176,33 @@ module.exports = function (app, passport) {
   app.post('/api/addItem', function (req, res) {
     console.log("add item fired");
 
-    const data = req.body;
-    // console.log(req.body.name);
-    // console.log(req.user);
-    // console.log(data);
-    // console.log(req.body);
-    // console.log(req.body.name);
-
-    // db.item.create({
-    //   fridgeId:
-    // })
-
+// find one where the item name is equal to what the user has entered
     db.item.findOne({
       where: {
         itemName: req.body.name
       }
     }).then(function (results) {
-      // console.log(results)
-      // console.log(results.dataValues.id);
-      // const newRow = {
-      //   dbItemIDId: results.dataValues.id,
-      //   dbItemName: req.body.name
-      // };
-      // console.log(newRow);
-      // db.fridge.create({
-      //   accountId: 1,
-      //   item:results.dataValues.id
-      // })
+      console.log("********")
+      console.log(req.user.id)
 
-      // console.log(request.user);
       db.fridge.findOne({
         where: {
-          id: req.user.id
+          accountId: req.user.id
         }
       }).then(fridge => {
-        // console.log(results);
         console.log(fridge);
-        fridge.addItem(results.dataValues.id, results.dataValues.id)
+        fridge.addItem(results.dataValues.id)
         res.json(results);
       })
-      // console.log(db.fridge);
-
-      // .then(function(results2){
-      //
-      // })
-
-
-
-
 
     })
 
-    // db.fridge.create(req.body)
-    // .then(function(dbPost) {
-    //   res.json(dbPost);
-    // });
   }); // end app.post api/addItem
 
 
   app.get("/api/loadSavedItems", function (req, res) {
+    // console.log(req.user.id);
+    console.log("*************************");
     console.log(req.user.id);
     db.fridge.findAll({
       include: [db.item],
