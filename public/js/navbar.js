@@ -34,19 +34,7 @@ $(document).ready(function () {
         }
 
         console.log(dataToSend);
-
-        $.post('/api/addItem', dataToSend)
-            .then(function (data) {
-                // $("#pantryList").append($("#pantryInput").val() + "<br>")
-                // console.log($("#pantryInput").val())
-                $(".modal").hide();
-                $("#pantryInput").val("")
-            })
-
-        console.log(dataToSend);
-
-
-
+        
       $.post('/api/addItem', dataToSend)
       .then(function(data){
 
@@ -71,7 +59,7 @@ $(document).ready(function () {
             </tr>
         `)
 
-       
+
         $("#addItemModal").hide();
         $(".input").val("");
 
